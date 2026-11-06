@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+#dot-kids-video-home{display:flex;justify-content:center;padding:16px;font-family:'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif}
+#dot-kids-video-home *{box-sizing:border-box}
+#dot-kids-video-home .phone{width:min(100%,390px);min-height:770px;border-radius:30px;overflow:hidden;border:1px solid #e3eaf4;box-shadow:0 20px 60px #29497818;background:#f9fcff;color:#243353;display:flex;flex-direction:column}
+#dot-kids-video-home .header{height:74px;padding:0 25px;display:flex;align-items:center;justify-content:space-between;background:#f9fcff}
+#dot-kids-video-home .logo{color:#253149;font-size:23px;font-weight:800;letter-spacing:-.075em;line-height:1.2}
+#dot-kids-video-home .logo span{color:#d87828;letter-spacing:-.055em}#dot-kids-video-home .logo b{color:#c75012;font-size:8px;vertical-align:top;margin-left:3px}
+#dot-kids-video-home .brand-subtitle{margin-top:4px;color:#96a7bd;font-size:12px;font-weight:500;letter-spacing:-.035em;line-height:1.25}
+#dot-kids-video-home .hero{position:relative;isolation:isolate;overflow:hidden;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 0 75px;background:linear-gradient(180deg,#fbfdff 0%,#f7fbff 50%,#edf7ff 100%)}
+#dot-kids-video-home .hero:before{content:'';position:absolute;z-index:0;top:116px;bottom:0;left:0;right:0;background:linear-gradient(150deg,#e5f4ff 2%,#d6eeff 54%,#d7e6ff 100%);border-radius:82px 82px 0 0;pointer-events:none}
+#dot-kids-video-home .hero:after{content:'';position:absolute;z-index:0;top:140px;left:50%;width:245px;height:245px;transform:translateX(-50%);border-radius:50%;background:#fff9;pointer-events:none}
+#dot-kids-video-home .bubble{position:relative;z-index:2;max-width:calc(100% - 36px);padding:21px 32px;background:#fff;border:1px solid #c9dff3;border-radius:24px;color:#344466;font-family:'Gaegu','Apple SD Gothic Neo',sans-serif;font-size:26px;font-weight:700;line-height:1.2;letter-spacing:0;text-align:center;box-shadow:0 8px 22px #587ead29}
+#dot-kids-video-home .bubble:after{content:'';position:absolute;bottom:-8px;left:calc(50% - 7px);width:14px;height:14px;background:#fff;border-right:1px solid #c9dff3;border-bottom:1px solid #c9dff3;transform:rotate(45deg);border-radius:2px}
+#dot-kids-video-home #speech-text{display:inline-block;white-space:nowrap;max-width:100%;vertical-align:bottom}
+#dot-kids-video-home #speech-text.typing{animation:dot-type var(--type-time,.9s) steps(var(--type-steps,12),end) both}
+@keyframes dot-type{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+#dot-kids-video-home .video-area{position:relative;z-index:1;width:108%;aspect-ratio:16 / 9;margin-top:22px;background:#dfeffc;border-radius:72px 72px 0 0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent),linear-gradient(0deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect;-webkit-mask-composite:source-in}
+#dot-kids-video-home video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+#dot-kids-video-home video.wave{opacity:0;pointer-events:none;transition:opacity .32s ease-in-out}
+#dot-kids-video-home .video-area.is-waving .wave{opacity:1}
+#dot-kids-video-home .actions{background:#f9fcff;padding:27px 27px 32px;border-radius:28px 28px 0 0;margin-top:-9px;position:relative;z-index:3}
+#dot-kids-video-home button{font:inherit;cursor:pointer}
+#dot-kids-video-home button:focus-visible{outline:3px solid #5482e4;outline-offset:3px}
+#dot-kids-video-home .primary{width:100%;height:58px;border:0;border-radius:15px;background:#ffcb57;color:#51401c;font-size:16px;font-weight:800;letter-spacing:-.035em;box-shadow:0 4px 0 #efb94a;transition:transform .16s,box-shadow .16s}
+#dot-kids-video-home .primary span{font-size:20px;padding-left:8px}
+#dot-kids-video-home .primary:active{transform:translateY(3px);box-shadow:0 1px 0 #efb94a}
+#dot-kids-video-home .secondary-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+#dot-kids-video-home .secondary-row button{min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e4ebf3;border-radius:14px;background:#fff;color:#52627d;font-size:14px;font-weight:700;letter-spacing:-.03em}
+#dot-kids-video-home .secondary-row svg{width:17px;height:17px;color:#7596c7;stroke-width:1.8}
+@media(max-width:360px){#dot-kids-video-home{padding:8px}#dot-kids-video-home .phone{min-height:710px}#dot-kids-video-home .bubble{font-size:21px;padding:20px 16px}#dot-kids-video-home .actions{padding-left:22px;padding-right:22px}}
+@media(prefers-reduced-motion:reduce){#dot-kids-video-home *{transition:none!important}#dot-kids-video-home #speech-text.typing{animation:none}}
+body{margin:0;min-height:100vh;background:#edf4fb}
