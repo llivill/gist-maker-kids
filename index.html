@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>말로만들DOT 만들기교실</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="board.css">
+  <link rel="stylesheet" href="flow-early.css">
+  <link rel="stylesheet" href="flow-late.css">
 </head>
 <body>
 <div id="dot-kids-video-home">
- <section class="phone" aria-label="말로만들DOT 교육용 홈 초안">
+ <section id="home-screen" class="phone" aria-label="말로만들DOT 교육용 홈 초안">
   <header class="header"><div class="brand"><div class="logo">말로만들<span>DOT</span><b>●</b></div><div class="brand-subtitle">지니 어스와 함께하는 만들기교실</div></div></header>
   <div class="hero">
    <div class="bubble" aria-live="polite"><span id="speech-text">우리랑 같이 만들어볼까?</span></div>
@@ -55,6 +58,231 @@
 <span>도움말</span></button></div>
   </div>
  </section>
+<section id="board-screen" class="board-screen" aria-labelledby="board-title" hidden>
+  <header class="board-header">
+    <button type="button" class="board-back" aria-label="이전 화면으로">
+      <span aria-hidden="true">←</span>
+    </button>
+    <div class="board-brand">말로만들<span>DOT</span><b>●</b></div>
+    <button type="button" class="board-help" aria-controls="board-help-content" aria-expanded="false">도움말 <span aria-hidden="true">?</span></button>
+  </header>
+
+  <main class="board-main">
+    <div class="board-step">
+      <div class="board-step-label"><span>첫 번째</span><strong>보드 준비하기</strong></div>
+      <span class="board-step-count" aria-label="첫 번째 단계">01</span>
+    </div>
+    <div class="board-progress" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <div class="board-intro">
+      <h1 id="board-title">어떤 보드가 있나요?</h1>
+      <div class="board-guide">
+        <img src="assets/mascots-poster.jpg" alt="">
+        <p>어른과 함께 보드 이름을 찾아봐요!</p>
+      </div>
+    </div>
+
+    <div id="board-help-content" class="board-help-content" hidden>
+      <strong>어떤 보드인지 모르겠다면?</strong>
+      <p>보드에 적힌 이름을 확인하거나 선생님, 보호자에게 물어봐요.</p>
+    </div>
+
+    <figure class="board-example">
+      <div class="board-example-art">
+        <img src="assets/esp32-s3.png" alt="ESP32-S3 DevKitC-1 보드 예시">
+      </div>
+      <figcaption><span>사진 속 보드</span> ESP32-S3 DevKitC-1</figcaption>
+    </figure>
+
+    <fieldset class="board-options">
+      <legend>내 보드 이름을 골라요</legend>
+      <label class="board-option">
+        <input type="radio" name="board" value="ESP32-S3 DevKitC-1">
+        <span class="board-radio" aria-hidden="true"></span>
+        <span class="board-option-text"><strong>ESP32-S3 DevKitC-1</strong><small>위 사진과 같은 보드예요</small></span>
+      </label>
+      <label class="board-option">
+        <input type="radio" name="board" value="ESP32 DevKit V1">
+        <span class="board-radio" aria-hidden="true"></span>
+        <span class="board-option-text"><strong>ESP32 DevKit V1</strong></span>
+      </label>
+      <label class="board-option">
+        <input type="radio" name="board" value="ESP32-C3 DevKitM-1">
+        <span class="board-radio" aria-hidden="true"></span>
+        <span class="board-option-text"><strong>ESP32-C3 DevKitM-1</strong></span>
+      </label>
+    </fieldset>
+  </main>
+
+  <footer class="board-footer">
+    <p id="board-status" role="status" aria-live="polite"></p>
+    <button type="button" class="board-next" disabled>다음으로 <span aria-hidden="true">→</span></button>
+  </footer>
+</section>
+<section id="setup-screen" class="flow-screen" aria-labelledby="setup-title" hidden>
+  <header class="flow-header">
+    <button type="button" class="flow-back setup-back" aria-label="보드 선택으로 돌아가기">←</button>
+    <div class="flow-brand">말로만들<span>DOT</span><b>●</b></div>
+  </header>
+
+  <main class="flow-main">
+    <div class="flow-step"><div><span>첫 번째</span><strong>보드 준비하기</strong></div><b aria-label="첫 번째 단계">01</b></div>
+    <div class="flow-progress" aria-hidden="true"><span class="current"></span><span></span><span></span></div>
+
+    <div class="flow-heading">
+      <h1 id="setup-title">보드를 준비해볼까요?</h1>
+      <div class="flow-guide">
+        <img src="assets/mascots-poster.jpg" alt="">
+        <p>어른과 함께 천천히 준비해요!</p>
+      </div>
+    </div>
+
+    <div class="flow-selected">
+      <span class="flow-selected-label">내가 고른 보드</span>
+      <strong data-selected-board>선택한 보드</strong>
+    </div>
+
+    <div class="flow-prepare">
+      <div class="flow-prepare-number" aria-hidden="true">1</div>
+      <div><strong>보드와 필요한 선을 준비해요</strong><p>어떤 선이 필요한지 어른에게 물어봐요.</p></div>
+    </div>
+    <div class="flow-prepare">
+      <div class="flow-prepare-number" aria-hidden="true">2</div>
+      <div><strong>선생님이나 보호자와 함께해요</strong><p>어려우면 도움을 요청해도 괜찮아요.</p></div>
+    </div>
+
+    <details class="flow-details">
+      <summary>어른을 위한 연결 안내</summary>
+      <p>이 화면은 시연용이에요. 네트워크 설정과 실제 보드 연결은 아직 준비 중입니다.</p>
+    </details>
+  </main>
+
+  <footer class="flow-footer">
+    <p class="flow-demo">지금은 둘러보기예요 · 실제 연결은 준비 중</p>
+    <button type="button" class="flow-primary setup-next">다음으로 <span aria-hidden="true">→</span></button>
+    <button type="button" class="flow-skip setup-skip">지금은 건너뛸래요</button>
+  </footer>
+</section>
+
+<section id="idea-screen" class="flow-screen" aria-labelledby="idea-title" hidden>
+  <header class="flow-header">
+    <button type="button" class="flow-back idea-back" aria-label="보드 준비 화면으로 돌아가기">←</button>
+    <div class="flow-brand">말로만들<span>DOT</span><b>●</b></div>
+  </header>
+
+  <main class="flow-main">
+    <div class="flow-step"><div><span>두 번째</span><strong>생각 들려주기</strong></div><b aria-label="두 번째 단계">02</b></div>
+    <div class="flow-progress" aria-hidden="true"><span class="done"></span><span class="current"></span><span></span></div>
+
+    <div class="flow-heading">
+      <h1 id="idea-title">어떤 걸 만들고 싶나요?</h1>
+      <div class="flow-guide">
+        <img src="assets/mascots-poster.jpg" alt="">
+        <p>우리에게 네 생각을 들려줘!</p>
+      </div>
+    </div>
+
+    <div class="idea-label">하나를 골라도 좋아요</div>
+    <div class="idea-examples" aria-label="만들기 아이디어 예시">
+      <button type="button" class="idea-example" data-idea="LED 불을 켜고 싶어요" aria-pressed="false"><span class="idea-icon idea-light" aria-hidden="true">💡</span><span>불 켜기</span></button>
+      <button type="button" class="idea-example" data-idea="소리가 나면 좋겠어요" aria-pressed="false"><span class="idea-icon idea-sound" aria-hidden="true">♪</span><span>소리 내기</span></button>
+      <button type="button" class="idea-example" data-idea="움직이게 만들고 싶어요" aria-pressed="false"><span class="idea-icon idea-move" aria-hidden="true">✦</span><span>움직이기</span></button>
+    </div>
+
+    <label class="idea-input-label" for="idea-text">직접 적어줘도 좋아요</label>
+    <p class="idea-input-hint">어른과 함께 글로 적어도 괜찮아요.</p>
+    <textarea id="idea-text" rows="3" placeholder="예: 버튼을 누르면 불이 켜져요"></textarea>
+  </main>
+
+  <footer class="flow-footer">
+    <p class="flow-demo">지금은 둘러보기예요 · 실제 만들기는 준비 중</p>
+    <button type="button" class="flow-primary idea-next" disabled>다음으로 <span aria-hidden="true">→</span></button>
+  </footer>
+</section>
+
+<section id="detail-screen" class="flow-screen" aria-labelledby="detail-title" hidden>
+  <header class="flow-header">
+    <button type="button" class="flow-back detail-back" aria-label="이전 화면으로"><span aria-hidden="true">←</span></button>
+    <div class="flow-brand">말로만들<span>DOT</span><b>●</b></div>
+  </header>
+  <main class="flow-main">
+    <div class="flow-step"><span>생각 구체화</span><strong>함께 정해봐요</strong></div>
+    <div class="flow-progress" aria-hidden="true"><span class="complete"></span><span class="complete"></span><span></span></div>
+
+    <div class="flow-intro">
+      <h1 id="detail-title">언제 작동하면 좋을까?</h1>
+      <p>마음에 드는 순간을 골라줘!</p>
+    </div>
+
+    <div class="flow-mascot-prompt">
+      <img src="assets/mascots-poster.jpg" alt="">
+      <p>어떤 때에 시작하면<br><strong>재미있을까?</strong></p>
+    </div>
+
+    <fieldset class="flow-trigger-options">
+      <legend>하나만 골라줘</legend>
+      <label class="flow-trigger">
+        <input type="radio" name="trigger" value="버튼을 누르면">
+        <span class="flow-trigger-mark" aria-hidden="true">●</span>
+        <span class="flow-trigger-label">버튼을 누르면</span>
+        <span class="flow-trigger-radio" aria-hidden="true"></span>
+      </label>
+      <label class="flow-trigger">
+        <input type="radio" name="trigger" value="어두워지면">
+        <span class="flow-trigger-mark moon" aria-hidden="true">☾</span>
+        <span class="flow-trigger-label">어두워지면</span>
+        <span class="flow-trigger-radio" aria-hidden="true"></span>
+      </label>
+      <label class="flow-trigger">
+        <input type="radio" name="trigger" value="항상">
+        <span class="flow-trigger-mark infinity" aria-hidden="true">∞</span>
+        <span class="flow-trigger-label">항상</span>
+        <span class="flow-trigger-radio" aria-hidden="true"></span>
+      </label>
+      <label class="flow-trigger">
+        <input type="radio" name="trigger" value="내가 적은 대로">
+        <span class="flow-trigger-mark" aria-hidden="true">✓</span>
+        <span class="flow-trigger-label">내가 적은 대로</span>
+        <span class="flow-trigger-radio" aria-hidden="true"></span>
+      </label>
+    </fieldset>
+  </main>
+  <footer class="flow-footer"><button type="button" class="flow-next detail-next" disabled>다음으로 <span aria-hidden="true">→</span></button></footer>
+</section>
+
+<section id="review-screen" class="flow-screen" aria-labelledby="review-title" hidden>
+  <header class="flow-header">
+    <button type="button" class="flow-back review-back" aria-label="이전 화면으로"><span aria-hidden="true">←</span></button>
+    <div class="flow-brand">말로만들<span>DOT</span><b>●</b></div>
+  </header>
+  <main class="flow-main">
+    <div class="flow-step"><span>마지막 확인</span><strong>우리의 생각을 볼까요?</strong></div>
+    <div class="flow-progress" aria-hidden="true"><span class="complete"></span><span class="complete"></span><span class="complete"></span></div>
+
+    <div class="flow-intro">
+      <h1 id="review-title">이렇게 만들고 싶어요!</h1>
+      <p>고른 내용을 함께 확인해봐요.</p>
+    </div>
+
+    <div class="flow-review-card">
+      <div class="flow-review-heading">
+        <div><span>짜잔!</span><strong>내 만들기 생각</strong></div>
+        <img src="assets/mascots-poster.jpg" alt="">
+      </div>
+      <dl class="flow-review-list">
+        <div><dt>내 보드</dt><dd data-selected-board>아직 고르지 않았어요</dd></div>
+        <div><dt>만들고 싶은 것</dt><dd data-selected-idea>아직 정하지 않았어요</dd></div>
+        <div><dt>작동하는 순간</dt><dd data-selected-trigger>아직 고르지 않았어요</dd></div>
+      </dl>
+    </div>
+    <p class="flow-review-hint">바꾸고 싶다면 뒤로 가서 다시 고를 수 있어요.</p>
+  </main>
+  <footer class="flow-footer">
+    <p id="review-status" class="flow-demo" role="status" aria-live="polite"></p>
+    <button type="button" class="flow-next review-next">다 골랐어요 <span aria-hidden="true">→</span></button>
+  </footer>
+</section>
+
 </div>
   <script src="app.js"></script>
 </body>
